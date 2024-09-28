@@ -27,6 +27,9 @@ public class Poe {
         System.out.println("Create a username (must contain an underscore and nomore than 5 characters): ");
         username = user_input.next();
         
+         System.out.println("Enter password (must be at least 8 characters, contain a capital letter, a number, and a special character):");
+        password = user_input.next();
+
         
     }
 }
