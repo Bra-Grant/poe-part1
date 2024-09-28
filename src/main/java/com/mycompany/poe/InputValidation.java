@@ -4,6 +4,8 @@
  */
 package com.mycompany.poe;
 
+import java.util.regex.Pattern;
+
 /**
  *
  * @author RC_Student_lab
