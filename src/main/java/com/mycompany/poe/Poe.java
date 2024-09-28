@@ -30,6 +30,9 @@ public class Poe {
          System.out.println("Enter password (must be at least 8 characters, contain a capital letter, a number, and a special character):");
         password = user_input.next();
 
-        
+        // Register the user and print the result
+        String registrationMessage = check_all.registerUser(username, password);
+        System.out.println(registrationMessage);
+
     }
 }
