@@ -10,6 +10,8 @@ package com.mycompany.poe;
  */
 class InputValidation {
     
-    
+    // Check if the username is valid (contains an underscore and is no more than 5 characters)
+    public boolean checkUsername(String username) {
+        return username.contains("_") && username.length() <= 5;
     
 }
