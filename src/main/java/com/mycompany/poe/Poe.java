@@ -23,6 +23,10 @@ public class Poe {
         String username;
         String password;
         
-        pr
+        //prompt user for username and pssword
+        System.out.println("Create a username (must contain an underscore and nomore than 5 characters): ");
+        username = user_input.next();
+        
+        
     }
 }
