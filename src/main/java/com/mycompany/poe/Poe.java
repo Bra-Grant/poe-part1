@@ -37,6 +37,14 @@ public class Poe {
          // If registration is successful, proceed to login
         if (registrationMessage.equals("Registration successful!")) {
             System.out.println("Please log in with your username and password:");
+            
+             
+            String correctUsername = username;
+            String correctPassword = password;
+            String firstName = " ";  
+            String lastName = " ";   
+            
+
 
     }
 }
