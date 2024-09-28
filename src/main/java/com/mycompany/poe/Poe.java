@@ -12,6 +12,11 @@ import java.util.*;
 public class Poe {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+         //login instance
+        InputValidation check_all = new InputValidation();
+        
+        // Create a Scanner object to receive user input
+        Scanner user_input = new Scanner(System.in);
     }
 }
