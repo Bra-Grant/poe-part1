@@ -42,8 +42,20 @@ public class Poe {
             String correctUsername = username;
             String correctPassword = password;
             String firstName = " ";  
-            String lastName = " ";   
+            String lastName = " ";  
             
+            //prompt user 
+            System.out.println("Username:");
+            String loginUsername = user_input.next();
+            System.out.println("Password:");
+            String loginPassword = user_input.next();
+
+            // Check login status and display the appropriate message
+            String loginMessage = check_all.returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword, firstName, lastName);
+            System.out.println(loginMessage);
+        }
+        
+
 
 
     }
