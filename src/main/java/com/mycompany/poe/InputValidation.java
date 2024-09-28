@@ -34,7 +34,7 @@ public class InputValidation {
 
         // Check if all conditions are met
         if (hasUpperCase && hasDigit && hasSpecialChar && isLongEnough) {
-            System.out.println("Password is valid and captured!");
+            System.out.println("Password is captured!");
             return true;  // Password is valid
         } else {
             System.out.println("Invalid password. It must contain at least 8 characters, a capital letter, a number, and a special character.");
@@ -53,6 +53,7 @@ public class InputValidation {
             return "Welcome " + firstName + " " + lastName + ", it is great to see you again.";
         } else {
             return "Username or password incorrect.";
-        }}
+        }
+    }
 }
 
