@@ -23,36 +23,59 @@ public class Poe {
         String username;
         String password;
         
-        //prompt user for username and pssword
-        System.out.println("Create a username (must contain an underscore and nomore than 5 characters): ");
-        username = user_input.next();
+         // Use a do-while loop to prompt for a valid username
+        do {
+            System.out.println("Create a username (must contain an underscore and no more than 5 characters):");
+            username = user_input.next();
+        } while (!check_all.checkUsername(username));  // Call checkUsername method
         
-         System.out.println("Enter password (must be at least 8 characters, contain a capital letter, a number, and a special character):");
-        password = user_input.next();
-
-        // Register the user and print the result
+        // Use a do-while loop to prompt for a valid password
+        do {
+            System.out.println("Enter password (must be at least 8 characters, contain a capital letter, a number, and a special character):");
+            password = user_input.next();
+        } while (!check_all.checkPassword(password));  // Call checkPassword method
+        
+        // Register the user and store the result
         String registrationMessage = check_all.registerUser(username, password);
-        System.out.println(registrationMessage);
-
-         // If registration is successful, proceed to login
+        
+        // Use if-else to check registration status
         if (registrationMessage.equals("Registration successful!")) {
+            System.out.println(registrationMessage);  // Registration succeeded
+            
+            // Proceed to login after successful registration
             System.out.println("Please log in with your username and password:");
             
-             
+            // Correct credentials for login validation
             String correctUsername = username;
             String correctPassword = password;
             String firstName = " ";  
-            String lastName = " ";  
+            String lastName = " ";    
             
-            //prompt user 
-            System.out.println("Username:");
-            String loginUsername = user_input.next();
-            System.out.println("Password:");
-            String loginPassword = user_input.next();
+            // Use a do-while loop 
+            boolean loginSuccess = false;  
+            do {
+                // Prompt for login credentials
+                System.out.println("Username:");
+                String loginUsername = user_input.next();
+                System.out.println("Password:");
+                String loginPassword = user_input.next();
 
-            // Check login status and display the appropriate message
-            String loginMessage = check_all.returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword, firstName, lastName);
-            System.out.println(loginMessage);
+                // Check login status
+                String loginMessage = check_all.returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword, firstName, lastName);
+
+                // Use if-else to handle login success or failure
+                if (loginMessage.equals("Welcome " + firstName + " " + lastName + ", it is great to see you again.")) {
+                    System.out.println(loginMessage);  // Successful login
+                    loginSuccess = true;  
+                } else {
+                    System.out.println("Username or password incorrect, please try again.");  // Failed login, retry
+                }
+                
+            } while (!loginSuccess);  // Repeat login attempts until successful
+        
+        } else {
+            // Registration failed, print the error message
+            System.out.println(registrationMessage);
         }
         
 
