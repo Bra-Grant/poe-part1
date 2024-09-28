@@ -34,5 +34,9 @@ public class Poe {
         String registrationMessage = check_all.registerUser(username, password);
         System.out.println(registrationMessage);
 
+         // If registration is successful, proceed to login
+        if (registrationMessage.equals("Registration successful!")) {
+            System.out.println("Please log in with your username and password:");
+
     }
 }
