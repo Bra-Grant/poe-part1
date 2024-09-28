@@ -18,5 +18,11 @@ public class Poe {
         
         // Create a Scanner object to receive user input
         Scanner user_input = new Scanner(System.in);
+        
+        //declare variables 
+        String username;
+        String password;
+        
+        pr
     }
 }
