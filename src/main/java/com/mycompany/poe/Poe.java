@@ -16,7 +16,7 @@ public class Poe {
          //login instance
         InputValidation check_all = new InputValidation();
         
-        // Create a Scanner object to receive user input
+        // Create a Scanner 
         Scanner user_input = new Scanner(System.in);
         
         //declare variables 

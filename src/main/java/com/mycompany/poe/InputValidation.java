@@ -24,23 +24,27 @@ public class InputValidation {
         }
     }
 
-    // Method to check if the password is valid
-    public boolean checkPassword(String password) {
-        // Add logic to validate the password based on the conditions you specified
-        boolean hasUpperCase = !password.equals(password.toLowerCase());
-        boolean hasDigit = password.matches(".*\\d.*");
-        boolean hasSpecialChar = password.matches(".*[!@#$%^&*].*");
-        boolean isLongEnough = password.length() >= 8;
+    // Check the password
+public boolean checkPassword(String password) {
+    // Pattern regex
+    Pattern checkNum = Pattern.compile("[0123456789]");
+    Pattern checkSpecials = Pattern.compile("[*-.`~!@#$%&_'^]");
+    Pattern checkUpper = Pattern.compile("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]");
 
-        // Check if all conditions are met
-        if (hasUpperCase && hasDigit && hasSpecialChar && isLongEnough) {
-            System.out.println("Password is captured!");
-            return true;  // Password is valid
-        } else {
-            System.out.println("Invalid password. It must contain at least 8 characters, a capital letter, a number, and a special character.");
-            return false;  // Password is invalid
-        }
+    // Check all conditions
+    if (password.length() >= 8 
+        && checkNum.matcher(password).find() 
+        && checkSpecials.matcher(password).find() 
+        && checkUpper.matcher(password).find()) {
+        
+        System.out.println("Password is captured!!");
+        return true;
+    } else {
+        System.out.println("Invalid password. It must contain at least 8 characters, a capital letter, a number, and a special character.");
+        return false;
     }
+}
+
 
     // Method to handle registration logic
     public String registerUser(String username, String password) {
