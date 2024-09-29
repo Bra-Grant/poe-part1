@@ -49,7 +49,7 @@ public class InputValidationTest {
 
     /**
      * Test of registerUser method, of class InputValidation.
-     * Make sure the expected result reflects correct handling of empty password.
+     * 
      */
     @Test
     public void testRegisterUser() {
@@ -80,7 +80,7 @@ public class InputValidationTest {
 
     /**
      * Test of getRegisteredUsername method, of class InputValidation.
-     * Fixed to use a non-null Scanner instance.
+     * 
      */
     @Test
     public void testGetRegisteredUsername() {
@@ -94,7 +94,7 @@ public class InputValidationTest {
 
     /**
      * Test of getRegisteredPassword method, of class InputValidation.
-     * Fixed to use a non-null Scanner instance.
+     * 
      */
     @Test
     public void testGetRegisteredPassword() {
@@ -108,7 +108,7 @@ public class InputValidationTest {
 
     /**
      * Test of register method, of class InputValidation.
-     * Fixed to use a non-null Scanner instance.
+     * 
      */
     @Test
     public void testRegister() {
@@ -120,7 +120,7 @@ public class InputValidationTest {
 
     /**
      * Test of login method, of class InputValidation.
-     * Fixed to use a non-null Scanner instance.
+     * 
      */
     @Test
     public void testLogin() {
