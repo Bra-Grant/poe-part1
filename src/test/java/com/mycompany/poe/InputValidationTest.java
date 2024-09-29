@@ -43,9 +43,9 @@ public class InputValidationTest {
     @Test
     public void testCheckPassword() {
         System.out.println("checkPassword");
-        String password = "";
+        String password = "Pestonda1711@";
         InputValidation instance = new InputValidation();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checkPassword(password);
         assertEquals(expResult, result);
         
@@ -57,7 +57,7 @@ public class InputValidationTest {
     @Test
     public void testRegisterUser() {
         System.out.println("registerUser");
-        String username = "";
+        String username = "gran_";
         String password = "";
         InputValidation instance = new InputValidation();
         String expResult = "";
