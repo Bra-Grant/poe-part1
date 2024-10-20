@@ -72,4 +72,12 @@ public class Poe {
                     JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, statusOptions, statusOptions[0]);
 
             String taskStatus = statusOptions[statusChoice];
+            
+             // Create new task and add to list
+            Task newTask = new Task(taskName, i + 1, taskDescription, developerName, taskDuration, taskID, taskStatus);
+            tasks.add(newTask);
+
+            JOptionPane.showMessageDialog(null, "Task successfully added!");
+        }
+    }
         }
