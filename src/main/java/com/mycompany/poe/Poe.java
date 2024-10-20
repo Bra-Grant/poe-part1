@@ -21,11 +21,10 @@ public class Poe {
         String password = "";
 
         while (true) {
-            System.out.println("1. Register");
-            System.out.println("2. Login");
-            System.out.println("3. Exit");
-            int choice = userInput.nextInt();
-            userInput.nextLine();
+            //create a menu
+            String[]options = {"Register","Login","Exit"};
+            int choice = JOptionPane.showOptionDialog(null,"Please choose an option:", "Main Menu",JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,null,options,options[0]);
 
             switch (choice) {
                 case 1:
@@ -34,7 +33,10 @@ public class Poe {
                     password = checkAll.getRegisteredPassword(userInput);
                     break;
                 case 2:
-                    checkAll.login(userInput, username, password);
+                    if (checkAll.login(userInput, username, password))
+                    { taskMenu();//open task menu after login
+                    }
+                    }
                     break;
                 case 3:
                     System.out.println("Exiting...");
