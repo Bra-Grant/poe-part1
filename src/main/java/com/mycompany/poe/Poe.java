@@ -53,4 +53,9 @@ public class Poe {
             String taskName = JOptionPane.showInputDialog("Enter task name:");
 
             String taskDescription = JOptionPane.showInputDialog("Enter task description (Max 50 characters):");
-}
+
+         // Validate task description length
+            while (taskDescription.length() > 50) {
+                taskDescription = JOptionPane.showInputDialog("Please enter a task description of less than 50 characters:");
+            }
+        }
