@@ -41,8 +41,11 @@ public class Poe {
                     JOptionPane.showMessageDialog(null, "Exiting...");
                     return;
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                   JOptionPane.showMessageDialog(null, "Invalid option. Please try again.");
             }
         }
     }
+     private static void addTask() {
+        String numTasksStr = JOptionPane.showInputDialog("How many tasks would you like to add?");
+        int numTasks = Integer.parseInt(numTasksStr);
 }
