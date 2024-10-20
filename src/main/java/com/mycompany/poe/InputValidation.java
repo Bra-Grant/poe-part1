@@ -56,5 +56,13 @@ public class InputValidation {
         } while (!checkUsername(username));
         
 //prompt for password
+do {
+            password = JOptionPane.showInputDialog(null, "Enter password (must be at least 8 characters, contain a capital letter, a number, and a special character):");
+            if (checkPassword(password)) {
+                JOptionPane.showMessageDialog(null, "Password is captured!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid password. It must contain at least 8 characters, a capital letter, a number, and a special character.");
+            }
+        } while (!checkPassword(password));
 
         
