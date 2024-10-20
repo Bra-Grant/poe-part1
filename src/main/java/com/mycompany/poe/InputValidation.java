@@ -65,4 +65,8 @@ do {
             }
         } while (!checkPassword(password));
 
+ String registrationMessage = registerUser(username, password);
+        JOptionPane.showMessageDialog(null, registrationMessage);
+    }
+    
         
