@@ -55,3 +55,6 @@ public class InputValidation {
             }
         } while (!checkUsername(username));
         
+//prompt for password
+
+        
