@@ -69,4 +69,8 @@ do {
         JOptionPane.showMessageDialog(null, registrationMessage);
     }
     
+// Method to handle login
+    public void login(String correctUsername, String correctPassword) {
+        String loginUsername;
+        String loginPassword;
         
