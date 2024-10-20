@@ -62,4 +62,14 @@ public class Poe {
 
             String taskDurationStr = JOptionPane.showInputDialog("Enter task duration (in hours):");
             int taskDuration = Integer.parseInt(taskDurationStr);
+            
+             // Generate Task ID (first two letters of task name and developer name)
+            String taskID = taskName.substring(0, 2).toUpperCase() + developerName.substring(0, 2).toUpperCase();
+
+            // Task status options (To Do, Doing, Done) using JOptionPane
+            String[] statusOptions = {"To Do", "Doing", "Done"};
+            int statusChoice = JOptionPane.showOptionDialog(null, "Select task status:", "Task Status",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, statusOptions, statusOptions[0]);
+
+            String taskStatus = statusOptions[statusChoice];
         }
