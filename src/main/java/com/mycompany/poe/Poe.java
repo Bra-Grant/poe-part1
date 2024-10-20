@@ -36,10 +36,9 @@ public class Poe {
                     if (checkAll.login(userInput, username, password))
                     { taskMenu();//open task menu after login
                     }
-                    }
                     break;
                 case 3:
-                    System.out.println("Exiting...");
+                    JOptionPane.showMessageDialog(null, "Exiting...");
                     return;
                 default:
                     System.out.println("Invalid option. Please try again.");
