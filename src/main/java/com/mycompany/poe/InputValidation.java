@@ -45,3 +45,13 @@ public class InputValidation {
         String username;
         String password;
         
+// Prompt for username
+        do {
+            username = JOptionPane.showInputDialog(null, "Create a username (must contain an underscore and no more than 5 characters):");
+            if (checkUsername(username)) {
+                JOptionPane.showMessageDialog(null, "Username is valid and captured!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid username. It must contain an underscore and be no more than 5 characters.");
+            }
+        } while (!checkUsername(username));
+        
