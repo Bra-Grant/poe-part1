@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  * @author RC_Student_lab
  */
 public class Poe {
+    private static ArrayList<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         InputValidation checkAll = new InputValidation();
