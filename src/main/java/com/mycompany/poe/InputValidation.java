@@ -74,3 +74,7 @@ do {
         String loginUsername;
         String loginPassword;
         
+while (true) {
+            loginUsername = JOptionPane.showInputDialog(null, "Enter your username:");
+            loginPasword = JOptionPne.showInputDialog(null, "Enter your password:");
+        
