@@ -48,4 +48,9 @@ public class Poe {
      private static void addTask() {
         String numTasksStr = JOptionPane.showInputDialog("How many tasks would you like to add?");
         int numTasks = Integer.parseInt(numTasksStr);
+        
+        for (int i = 0; i < numTasks; i++) {
+            String taskName = JOptionPane.showInputDialog("Enter task name:");
+
+            String taskDescription = JOptionPane.showInputDialog("Enter task description (Max 50 characters):");
 }
