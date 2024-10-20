@@ -58,4 +58,8 @@ public class Poe {
             while (taskDescription.length() > 50) {
                 taskDescription = JOptionPane.showInputDialog("Please enter a task description of less than 50 characters:");
             }
+            String developerName = JOptionPane.showInputDialog("Enter developer name:");
+
+            String taskDurationStr = JOptionPane.showInputDialog("Enter task duration (in hours):");
+            int taskDuration = Integer.parseInt(taskDurationStr);
         }
