@@ -19,15 +19,15 @@ public class Task {
     private String taskStatus;
     
     //constructor to initialize task details
-   public Task(String taskName,int taskNumber,String taskDescription, String developersDetails,int taskDuration,String taskID, String taskStatus){
-       this.taskName = taskName;
-       this.taskNumber = taskNumber;
-       this.taskDescription = taskDescription;
-       this.developersDetails = developersDetails;
-       this.taskDuration = taskDuration;
-       this.taskID = taskID;
-       this.taskStatus = taskStatus;
-   }
+    public Task(String taskName, int taskNumber, String taskDescription, String developerName, int taskDuration, String taskID, String taskStatus) {
+        this.taskName = taskName;
+        this.taskNumber = taskNumber;
+        this.taskDescription = taskDescription;
+        this.developerName = developerName;
+        this.taskDuration = taskDuration;
+        this.taskID = taskID;
+        this.taskStatus = taskStatus;
+    }
    //getter methods to access attributes
    public String getTaskName(){
        return taskName;
@@ -52,6 +52,14 @@ public class Task {
    public String getTaskID(){
        return taskStatus;
    }
+   
+   public String getDeveloperName() {
+        return developerName;
+    }
+
+    public String getTaskStatus() {
+        return taskStatus;
+    }
    
    //method to return a string with full task detaiils
    public String getTaskDetails(){
