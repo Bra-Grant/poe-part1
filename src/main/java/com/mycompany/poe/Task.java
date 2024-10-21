@@ -8,6 +8,16 @@ package com.mycompany.poe;
  *
  * @author RC_Student_lab
  */
-class Task {
+public class Task {
+    //declare variables
+    private String taskName;
+    private int taskNumber;
+    private String taskDescriptioon;
+    private String developersDetaisl;
+    private int taskDuration;
+    private String taskID;
+    private String taskStatus;
+    
+    
     
 }
