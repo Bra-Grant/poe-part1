@@ -70,3 +70,8 @@ switch (choice) {
             }
         }
     }
+
+// Method to add tasks
+    private static void addTask() {
+        String numTasksStr = JOptionPane.showInputDialog("How many tasks would you like to add?");
+        int numTasks = Integer.parseInt(numTasksStr);
