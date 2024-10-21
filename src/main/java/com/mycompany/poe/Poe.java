@@ -55,3 +55,18 @@ public class Poe {
             int choice = JOptionPane.showOptionDialog(null, "Task Menu", "Task Options",
                     JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
             
+switch (choice) {
+                case 0:
+                    addTask();
+                    break;
+                case 1:
+                    viewTasks();
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Exiting Task Menu...");
+                    return;
+                default:
+                    JOptionPane.showMessageDialog(null, "Invalid option.");
+            }
+        }
+    }
