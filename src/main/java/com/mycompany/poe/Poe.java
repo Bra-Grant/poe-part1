@@ -98,3 +98,12 @@ String developerName = JOptionPane.showInputDialog("Enter developer name:");
                     JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, statusOptions, statusOptions[0]);
 
             String taskStatus = statusOptions[statusChoice];
+            
+// Create a new task and add it to the list
+            Task newTask = new Task(taskName, i + 1, taskDescription, developerName, taskDuration, taskID, taskStatus);
+            tasks.add(newTask);
+
+            JOptionPane.showMessageDialog(null, "Task successfully added!");
+        }
+    }
+    
