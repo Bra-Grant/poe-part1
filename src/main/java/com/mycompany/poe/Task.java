@@ -45,6 +45,15 @@ public class Task {
        return developerDetails;
    }
    
+   public int getTaskDuration(){
+       return taskDuration;
+   }
+   
+   public String getTaskID(){
+       return taskStatus;
+   }
+   
+   
    
     
     
