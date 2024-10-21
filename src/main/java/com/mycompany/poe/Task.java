@@ -63,6 +63,21 @@ public class Task {
                "\nStatus: " + taskStatus;
    }
    
+   //method to validate task description length
+   public boolean checkTaskDescription(){
+       return taskDecription.length()<= 50;
+       }
+   
+   //method to create a formatted task ID
+   public String createTaskID(){
+       if(taskName.length() >= 2 && developerDetails.length >= 2){
+           return taskName.substring(02).toUpperCase()+ developerDetails.substring(02).toUpperCase();
+       }
+       return taskID;
+   }
+   
+   
+   }
    
     
     
