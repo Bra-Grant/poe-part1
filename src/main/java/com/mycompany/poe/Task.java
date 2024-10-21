@@ -53,6 +53,15 @@ public class Task {
        return taskStatus;
    }
    
+   //method to return a string with full task detaiils
+   public Sttring getTaskDetails(){
+       return "Task Number: " + taskNumber + 
+               "\nTask Name:" + taskName +
+               "\nTask Description: " +
+               taskDescription + "\nDeveloper: " + developerDetails +
+               "\nDuration: " + taskDuration + "hours" + "\nTask ID: " +
+               "\nStatus: " + taskStatus;
+   }
    
    
     
