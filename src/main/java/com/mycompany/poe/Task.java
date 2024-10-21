@@ -18,6 +18,11 @@ public class Task {
     private String taskID;
     private String taskStatus;
     
+    //constructor to initialize task details
+   public Task(String taskName,int taskNumber,String taskDescription, String developersDetails,int taskDuration,String taskID, String taskStatus)
+   
+   
+    
     
     
 }
