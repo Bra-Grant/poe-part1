@@ -84,3 +84,17 @@ for (int i = 0; i < numTasks; i++) {
             while (taskDescription.length() > 50) {
                 taskDescription = JOptionPane.showInputDialog("Please enter a task description of less than 50 characters:");
             }
+            
+String developerName = JOptionPane.showInputDialog("Enter developer name:");
+            String taskDurationStr = JOptionPane.showInputDialog("Enter task duration (in hours):");
+            int taskDuration = Integer.parseInt(taskDurationStr);
+            
+// Generate Task ID (first two letters of task name and developer name)
+            String taskID = taskName.substring(0, 2).toUpperCase() + developerName.substring(0, 2).toUpperCase();
+
+            // Task status options (To Do, Doing, Done)
+            String[] statusOptions = {"To Do", "Doing", "Done"};
+            int statusChoice = JOptionPane.showOptionDialog(null, "Select task status:", "Task Status",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, statusOptions, statusOptions[0]);
+
+            String taskStatus = statusOptions[statusChoice];
