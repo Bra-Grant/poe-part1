@@ -28,7 +28,21 @@ public class Task {
        this.taskID = taskID;
        this.taskStatus = taskStatus;
    }
+   //getter methods to access attributes
+   public String getTaskName(){
+       return taskName;
+   }
    
+   public int getTaskNumber(){
+       return taskNumber;
+   }
+   
+   public String getTaskDescription(){
+       return taskDescription;
+   }
+   
+   public String getDeveloperDetails(){
+       return developerDetails;
    }
    
    
