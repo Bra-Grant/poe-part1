@@ -39,3 +39,11 @@ public class Poe {
                     }
                     break;
                     
+                    case 2: // Exit
+                    JOptionPane.showMessageDialog(null, "Exiting...");
+                    return;
+                default:
+                    JOptionPane.showMessageDialog(null, "Invalid option. Please try again.");
+            }
+        }
+    }
