@@ -12,8 +12,8 @@ public class Task {
     //declare variables
     private String taskName;
     private int taskNumber;
-    private String taskDescriptioon;
-    private String developersDetaisl;
+    private String taskDescription;
+    private String developersDetails;
     private int taskDuration;
     private String taskID;
     private String taskStatus;
@@ -23,7 +23,7 @@ public class Task {
        this.taskName = taskName;
        this.taskNumber = taskNumber;
        this.taskDescription = taskDescription;
-       this.developersDetaisl = developersDetails;
+       this.developersDetails = developersDetails;
        this.taskDuration = taskDuration;
        this.taskID = taskID;
        this.taskStatus = taskStatus;
@@ -42,7 +42,7 @@ public class Task {
    }
    
    public String getDeveloperDetails(){
-       return developerDetails;
+       return developersDetails;
    }
    
    public int getTaskDuration(){
@@ -54,31 +54,31 @@ public class Task {
    }
    
    //method to return a string with full task detaiils
-   public Sttring getTaskDetails(){
+   public String getTaskDetails(){
        return "Task Number: " + taskNumber + 
                "\nTask Name:" + taskName +
                "\nTask Description: " +
-               taskDescription + "\nDeveloper: " + developerDetails +
+               taskDescription + "\nDeveloper: " + developersDetails +
                "\nDuration: " + taskDuration + "hours" + "\nTask ID: " +
                "\nStatus: " + taskStatus;
    }
    
    //method to validate task description length
    public boolean checkTaskDescription(){
-       return taskDecription.length()<= 50;
+       return taskDescription.length()<= 50;
        }
    
    //method to create a formatted task ID
    public String createTaskID(){
-       if(taskName.length() >= 2 && developerDetails.length >= 2){
-           return taskName.substring(02).toUpperCase()+ developerDetails.substring(02).toUpperCase();
+       if(taskName.length() >= 2 && developersDetails.length() >= 2){
+           return taskName.substring(02).toUpperCase()+ developersDetails.substring(02).toUpperCase();
        }
        return taskID;
    }
    
    //method to return task duration
    public int returnTotalsHours(){
-       return taskDuraation;
+       return taskDuration;
    }
    
     

@@ -28,12 +28,12 @@ public class Poe {
 
             switch (choice) {
                 case 1:
-                    checkAll.register(userInput);
-                    username = checkAll.getRegisteredUsername(userInput);
-                    password = checkAll.getRegisteredPassword(userInput);
+                    checkAll.register();
+                    username = checkAll.getRegisteredUsername();
+                    password = checkAll.getRegisteredPassword();
                     break;
                 case 2:
-                    if (checkAll.login(userInput, username, password))
+                    if (checkAll.login(username, password))
                     { taskMenu();//open task menu after login
                     }
                     break;

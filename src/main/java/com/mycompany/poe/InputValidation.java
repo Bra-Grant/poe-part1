@@ -76,10 +76,10 @@ do {
         
 while (true) {
             loginUsername = JOptionPane.showInputDialog(null, "Enter your username:");
-            loginPasword = JOptionPne.showInputDialog(null, "Enter your password:");
+            loginPassword = JOptionPane.showInputDialog(null, "Enter your password:");
             
-String loginMessage = returnLognStatus(loginUsername, loginPassword, correctUsername, correctPassword);
-            JOptinPane.showMessageDialog(null, loginMessage);
+String loginMessage = returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword);
+            JOptionPane.showMessageDialog(null, loginMessage);
 
             if (loginMessage.equals("Welcome!")) {
                 break;
