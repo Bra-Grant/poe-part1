@@ -32,3 +32,10 @@ public class Poe {
                     username = checkAll.getRegisteredUsername(); 
                     password = checkAll.getRegisteredPassword(); 
                     break;
+                    
+                case 1: // Login
+                    if (checkAll.login(username, password)) { 
+                        taskMenu(); // Open task menu after login
+                    }
+                    break;
+                    
