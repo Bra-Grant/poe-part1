@@ -76,7 +76,9 @@ public class Task {
        return taskID;
    }
    
-   
+   //method to return task duration
+   public int returnTotalsHours(){
+       return taskDuraation;
    }
    
     
