@@ -107,3 +107,21 @@ String developerName = JOptionPane.showInputDialog("Enter developer name:");
         }
     }
     
+    // Method to view tasks
+    private static void viewTasks() {
+        if (tasks.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No tasks available.");
+        } else {
+            StringBuilder taskList = new StringBuilder();
+            for (Task task : tasks) {
+                taskList.append("Task ID: ").append(task.getTaskID()).append("\n")
+                        .append("Task Name: ").append(task.getTaskName()).append("\n")
+                        .append("Task Description: ").append(task.getTaskDescription()).append("\n")
+                        .append("Developer Name: ").append(task.getDeveloperName()).append("\n")
+                        .append("Task Duration: ").append(task.getTaskDuration()).append(" hours\n")
+                        .append("Task Status: ").append(task.getTaskStatus()).append("\n\n");
+            }
+            JOptionPane.showMessageDialog(null, taskList.toString());
+        }
+    }
+}
