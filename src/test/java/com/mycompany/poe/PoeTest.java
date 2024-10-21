@@ -30,7 +30,7 @@ public class PoeTest {
     
     @BeforeEach
     public void setUp() {
-        hhjhkgkgjkhkjhkjjfjfj
+        
     }
     
     @AfterEach
