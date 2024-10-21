@@ -19,7 +19,17 @@ public class Task {
     private String taskStatus;
     
     //constructor to initialize task details
-   public Task(String taskName,int taskNumber,String taskDescription, String developersDetails,int taskDuration,String taskID, String taskStatus)
+   public Task(String taskName,int taskNumber,String taskDescription, String developersDetails,int taskDuration,String taskID, String taskStatus){
+       this.taskName = taskName;
+       this.taskNumber = taskNumber;
+       this.taskDescription = taskDescription;
+       this.developersDetaisl = developersDetails;
+       this.taskDuration = taskDuration;
+       this.taskID = taskID;
+       this.taskStatus = taskStatus;
+   }
+   
+   }
    
    
     
