@@ -47,3 +47,11 @@ public class Poe {
             }
         }
     }
+    
+// Placeholder for task menu
+    private static void taskMenu() {
+        String[] options = {"Add Task", "View Tasks", "Exit Task Menu"};
+        while (true) {
+            int choice = JOptionPane.showOptionDialog(null, "Task Menu", "Task Options",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+            
