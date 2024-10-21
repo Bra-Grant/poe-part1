@@ -70,20 +70,21 @@ do {
     }
     
 // Method to handle login
-    public void login(String correctUsername, String correctPassword) {
-        String loginUsername;
-        String loginPassword;
-        
-while (true) {
-            loginUsername = JOptionPane.showInputDialog(null, "Enter your username:");
-            loginPassword = JOptionPane.showInputDialog(null, "Enter your password:");
-            
-String loginMessage = returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword);
-            JOptionPane.showMessageDialog(null, loginMessage);
+   public boolean login(Scanner userInput, String correctUsername, String correctPassword) {
+    String loginUsername;
+    String loginPassword;
 
-            if (loginMessage.equals("Welcome!")) {
-                break;
-            }
+    while (true) {
+        loginUsername = JOptionPane.showInputDialog("Username:");
+        loginPassword = JOptionPane.showInputDialog("Password:");
+
+        String loginMessage = returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword);
+        JOptionPane.showMessageDialog(null, loginMessage);
+
+        if (loginMessage.equals("Welcome!")) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
