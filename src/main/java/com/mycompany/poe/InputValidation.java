@@ -41,9 +41,10 @@ public class InputValidation {
     }
 
     // Method to handle registration
-    public void register() {
-        String username;
-        String password;
+   public String[] register() {
+    String username;
+    String password;
+    Scanner userInput = new Scanner(System.in);
         
 // Prompt for username
         do {

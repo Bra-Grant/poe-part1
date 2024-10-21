@@ -13,17 +13,17 @@ public class Task {
     private String taskName;
     private int taskNumber;
     private String taskDescription;
-    private String developersDetails;
-    private int taskDuration;
+     private String developerDetails;
+     private int taskDuration;
     private String taskID;
     private String taskStatus;
     
     //constructor to initialize task details
-    public Task(String taskName, int taskNumber, String taskDescription, String developerName, int taskDuration, String taskID, String taskStatus) {
+    public Task(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskID, String taskStatus) {
         this.taskName = taskName;
         this.taskNumber = taskNumber;
         this.taskDescription = taskDescription;
-        this.developerName = developerName;
+        this.developerDetails = developerDetails;
         this.taskDuration = taskDuration;
         this.taskID = taskID;
         this.taskStatus = taskStatus;
@@ -42,7 +42,7 @@ public class Task {
    }
    
    public String getDeveloperDetails(){
-       return developersDetails;
+       return developerDetails;
    }
    
    public int getTaskDuration(){
@@ -50,13 +50,9 @@ public class Task {
    }
    
    public String getTaskID(){
-       return taskStatus;
+       return taskID;
    }
-   
-   public String getDeveloperName() {
-        return developerName;
-    }
-
+  
     public String getTaskStatus() {
         return taskStatus;
     }
@@ -66,7 +62,7 @@ public class Task {
        return "Task Number: " + taskNumber + 
                "\nTask Name:" + taskName +
                "\nTask Description: " +
-               taskDescription + "\nDeveloper: " + developersDetails +
+               taskDescription + "\nDeveloper: " + developerDetails +
                "\nDuration: " + taskDuration + "hours" + "\nTask ID: " +
                "\nStatus: " + taskStatus;
    }
@@ -78,8 +74,8 @@ public class Task {
    
    //method to create a formatted task ID
    public String createTaskID(){
-       if(taskName.length() >= 2 && developersDetails.length() >= 2){
-           return taskName.substring(02).toUpperCase()+ developersDetails.substring(02).toUpperCase();
+       if(taskName.length() >= 2 && developerDetails.length() >= 2){
+           return taskName.substring(02).toUpperCase()+ developerDetails.substring(02).toUpperCase();
        }
        return taskID;
    }

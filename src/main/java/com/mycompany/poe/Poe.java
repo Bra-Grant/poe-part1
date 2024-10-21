@@ -117,7 +117,7 @@ String developerName = JOptionPane.showInputDialog("Enter developer name:");
                 taskList.append("Task ID: ").append(task.getTaskID()).append("\n")
                         .append("Task Name: ").append(task.getTaskName()).append("\n")
                         .append("Task Description: ").append(task.getTaskDescription()).append("\n")
-                        .append("Developer Name: ").append(task.getDeveloperName()).append("\n")
+                        .append("Developer Name: ").append(task.getDeveloperDetails()).append("\n")
                         .append("Task Duration: ").append(task.getTaskDuration()).append(" hours\n")
                         .append("Task Status: ").append(task.getTaskStatus()).append("\n\n");
             }
