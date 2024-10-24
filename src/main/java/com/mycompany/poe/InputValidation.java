@@ -70,6 +70,9 @@ do {
 
  String registrationMessage = registerUser(username, password);
         JOptionPane.showMessageDialog(null, registrationMessage);
+        
+        return new String[]{username,password}; //return username and password
+                
     }
     
 // Method to handle login

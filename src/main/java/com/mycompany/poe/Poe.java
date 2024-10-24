@@ -28,9 +28,9 @@ public class Poe {
 
             switch (choice) {
                 case 0: // Register
-                    checkAll.register(); 
-                    username = checkAll.getRegisteredUsername(); 
-                    password = checkAll.getRegisteredPassword(); 
+                   String[] credentials = checkAll.register(); 
+                    username = credentials[0]; 
+                    password = credentials[1]; 
                     break;
                     
                 case 1: // Login
