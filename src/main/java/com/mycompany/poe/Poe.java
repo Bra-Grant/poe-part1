@@ -20,14 +20,17 @@ public class Poe {
         String username = "";
         String password = "";
 
-        while (true) {
-            //create a menu
-            String[]options = {"Register","Login","Exit"};
-            int choice = JOptionPane.showOptionDialog(null,"Please choose an option:", "Main Menu",JOptionPane.DEFAULT_OPTION,
-                    JOptionPane.INFORMATION_MESSAGE,null,options,options[0]);
+         while (true) {
+            String menu = "Please select an option:\n"
+                        + "0. Register\n"
+                        + "1. Login\n"
+                        + "2. Exit";
+            
+            String inputOption = JOptionPane.showInputDialog(menu);
+            int option = Integer.parseInt(inputOption);
 
-            switch (choice) {
-                case 0: // Register
+            switch (option) {
+                case 0: // Register info
                    String[] credentials = checkAll.register(); 
                     username = credentials[0]; 
                     password = credentials[1]; 
