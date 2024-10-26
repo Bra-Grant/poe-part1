@@ -53,12 +53,17 @@ public class Poe {
     
 // Placeholder for task menu
     private static void taskMenu() {
-        String[] options = {"Add Task", "View Tasks", "Exit Task Menu"};
+        
         while (true) {
-            int choice = JOptionPane.showOptionDialog(null, "Task Menu", "Task Options",
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
-            
-switch (choice) {
+             String taskMenu = "Task Menu:\n"
+                            + "1. Add Task\n"
+                            + "2. View Tasks\n"
+                            + "3. Exit Task Menu";
+             
+             String inputOption = JOptionPane.showInputDialog(taskMenu);
+            int option = Integer.parseInt(inputOption);
+             
+switch (option) {
                 case 0:
                     addTask();
                     break;

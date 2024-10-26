@@ -48,13 +48,13 @@ public class InputValidation {
         
 // Prompt for username
         do {
-        System.out.println("Create a username (must contain an underscore and no more than 5 characters):");
-        username = userInput.nextLine();
-        if (checkUsername(username)) {
-            System.out.println("Username is valid and captured!");
-        } else {
-            System.out.println("Invalid username. It must contain an underscore and be no more than 5 characters.");
-        }
+    username = JOptionPane.showInputDialog("Create a username (must contain an underscore and be no more than 5 characters):");
+    
+    if (username != null && checkUsername(username)) {
+        JOptionPane.showMessageDialog(null, "Username is valid and captured!");
+    } else {
+        JOptionPane.showMessageDialog(null, "Invalid username. It must contain an underscore and be no more than 5 characters.");
+    }
     } while (!checkUsername(username));
 
         
