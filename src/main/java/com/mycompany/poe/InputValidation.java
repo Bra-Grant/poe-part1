@@ -28,22 +28,28 @@ public class InputValidation {
             && checkUpper.matcher(password).find();
     }
 
-    public String registerUser(String username, String password) {
-        return "Registration successful!";
+    public String registerUser(String firstname, String lastname, String username, String password) {
+        if (!checkUsername(username)) {
+            return "Invalid username. It must contain an underscore and be no more than 5 characters.";
+        }
+        if (!checkPassword(password)) {
+            return "Invalid password. It must contain at least 8 characters, a capital letter, a number, and a special character.";
+        }
+
+        return "Registration successful! Welcome, " + firstname + " " + lastname;
     }
 
     public String returnLoginStatus(String loginUsername, String loginPassword, String correctUsername, String correctPassword) {
         if (loginUsername.equals(correctUsername) && loginPassword.equals(correctPassword)) {
-            return "Welcome!";
+            return "Welcome! ";
         } else {
             return "Username or password incorrect.";
         }
     }
 
     // Method to handle registration
-   public String[] register() {
-    String username;
-    String password;
+   public String[] register(String username, String password,String firstname,String lastname) {
+   
     Scanner userInput = new Scanner(System.in);
         
 // Prompt for username
@@ -68,22 +74,17 @@ do {
             }
         } while (!checkPassword(password));
 
- String registrationMessage = registerUser(username, password);
-        JOptionPane.showMessageDialog(null, registrationMessage);
-        
-        return new String[]{username,password}; //return username and password
-                
-    }
+
+  
     
 // Method to handle login
-  public boolean login(String correctUsername, String correctPassword) {
-    String loginUsername = JOptionPane.showInputDialog("Username:");
-    String loginPassword = JOptionPane.showInputDialog("Password:");
+   public boolean login(String loginUsername, String loginPassword, String correctUsername, String correctPassword) {
+        String loginMessage = returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword);
+        JOptionPane.showMessageDialog(null, loginMessage);
 
-    String loginMessage = returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword);
-    JOptionPane.showMessageDialog(null, loginMessage);
-
-    return loginMessage.equals("Welcome!");
+        return loginMessage.equals("Welcome!");
+    }
+}
 }
 }
         

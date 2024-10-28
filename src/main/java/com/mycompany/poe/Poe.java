@@ -17,34 +17,40 @@ public class Poe {
     public static void main(String[] args) {
         InputValidation checkAll = new InputValidation();
         Scanner userInput = new Scanner(System.in);
+        String firstname = "";
+        String lastname = "";
         String username = "";
         String password = "";
 
          while (true) {
             String menu = "Please select an option:\n"
-                        + "0. Register\n"
-                        + "1. Login\n"
-                        + "2. Exit";
+                        + "1. Register\n"
+                        + "2. Login\n"
+                        + "3. Tasks\n"
+                        + "4. Exit";
             
             String inputOption = JOptionPane.showInputDialog(menu);
             int option = Integer.parseInt(inputOption);
 
             switch (option) {
-                case 0: // Register info
+                case 1: // Register info
                    String[] credentials = checkAll.register(); 
                     username = credentials[0]; 
                     password = credentials[1]; 
                     break;
                     
-                case 1: // Login
-                    if (checkAll.login(username, password)) { 
-                        taskMenu(); // Open task menu after login
-                    }
+                case 2: // Login
+                    checkAll.login(username, password);
+                    break;
+                
+                case 3: // Exit
+                    taskMenu();
                     break;
                     
-                    case 2: // Exit
+                case 4:
                     JOptionPane.showMessageDialog(null, "Exiting...");
                     return;
+                    
                 default:
                     JOptionPane.showMessageDialog(null, "Invalid option. Please try again.");
             }
