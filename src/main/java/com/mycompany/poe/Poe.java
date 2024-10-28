@@ -47,7 +47,7 @@ public class Poe {
                 case 2: // Login
                     String loginUsername = JOptionPane.showInputDialog("Username:");
                     String loginPassword = JOptionPane.showInputDialog("Password:");
-                    checkAll.login(loginUsername, loginPassword, username, password);
+                    checkAll.login(loginUsername, loginPassword, username, password, firstname, lastname);
                     break;
                 
                 case 3: // Exit

@@ -40,7 +40,7 @@ public class InputValidation {
     }
     
 // Method to handle login
-   public boolean login(String loginUsername, String loginPassword, String correctUsername, String correctPassword) {
+   public boolean login(String loginUsername, String loginPassword, String correctUsername, String correctPassword, String firstName, String lastName) {
         boolean loginSuccess = loginUsername.equals(correctUsername) && loginPassword.equals(correctPassword);
         String message = returnLoginStatus(loginSuccess, firstName, lastName);
         JOptionPane.showMessageDialog(null, message);
