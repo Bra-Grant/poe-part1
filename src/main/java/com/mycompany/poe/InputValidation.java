@@ -36,12 +36,20 @@ public class InputValidation {
             return "Invalid password. It must contain at least 8 characters, a capital letter, a number, and a special character.";
         }
 
-        return "Registration successful! Welcome, " + firstname + " " + lastname;
+        return "Registration successful!";
     }
-
-    public String returnLoginStatus(String loginUsername, String loginPassword, String correctUsername, String correctPassword) {
-        if (loginUsername.equals(correctUsername) && loginPassword.equals(correctPassword)) {
-            return "Welcome! ";
+    
+// Method to handle login
+   public boolean login(String loginUsername, String loginPassword, String correctUsername, String correctPassword) {
+        boolean loginSuccess = loginUsername.equals(correctUsername) && loginPassword.equals(correctPassword);
+        String message = returnLoginStatus(loginSuccess, firstName, lastName);
+        JOptionPane.showMessageDialog(null, message);
+        return loginSuccess;
+    }
+   
+    public String returnLoginStatus(boolean loginSuccess,String firstName, String lastName) {
+        if (loginSuccess) {
+            return "Welcome! "+ firstName + " " + lastName + "!";
         } else {
             return "Username or password incorrect.";
         }
@@ -49,9 +57,7 @@ public class InputValidation {
 
     // Method to handle registration
    public String[] register(String username, String password,String firstname,String lastname) {
-   
-    Scanner userInput = new Scanner(System.in);
-        
+       
 // Prompt for username
         do {
     username = JOptionPane.showInputDialog("Create a username (must contain an underscore and be no more than 5 characters):");
@@ -74,17 +80,13 @@ do {
             }
         } while (!checkPassword(password));
 
+return new String[]{username, password,firstname, lastname}; //return user details
 
-  
+
+   
     
-// Method to handle login
-   public boolean login(String loginUsername, String loginPassword, String correctUsername, String correctPassword) {
-        String loginMessage = returnLoginStatus(loginUsername, loginPassword, correctUsername, correctPassword);
-        JOptionPane.showMessageDialog(null, loginMessage);
 
-        return loginMessage.equals("Welcome!");
-    }
 }
 }
-}
+
         

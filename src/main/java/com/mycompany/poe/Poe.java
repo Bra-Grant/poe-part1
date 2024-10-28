@@ -13,10 +13,11 @@ import javax.swing.JOptionPane;
  */
 public class Poe {
     private static ArrayList<Task> tasks = new ArrayList<>();
+    private static String firstname = "";
+    private static String lastname = "";
 
     public static void main(String[] args) {
         InputValidation checkAll = new InputValidation();
-        Scanner userInput = new Scanner(System.in);
         String firstname = "";
         String lastname = "";
         String username = "";
@@ -34,13 +35,19 @@ public class Poe {
 
             switch (option) {
                 case 1: // Register info
-                   String[] credentials = checkAll.register(); 
-                    username = credentials[0]; 
-                    password = credentials[1]; 
+                   firstname = JOptionPane.showInputDialog("Enter first name:");
+                    lastname = JOptionPane.showInputDialog("Enter last name:");
+                    username = JOptionPane.showInputDialog("Create a username:");
+                    password = JOptionPane.showInputDialog("Create a password:");
+                    
+                    String registrationMessage = checkAll.registerUser(firstname, lastname, username, password);
+                    JOptionPane.showMessageDialog(null, registrationMessage); 
                     break;
                     
                 case 2: // Login
-                    checkAll.login(username, password);
+                    String loginUsername = JOptionPane.showInputDialog("Username:");
+                    String loginPassword = JOptionPane.showInputDialog("Password:");
+                    checkAll.login(loginUsername, loginPassword, username, password);
                     break;
                 
                 case 3: // Exit
@@ -70,13 +77,13 @@ public class Poe {
             int option = Integer.parseInt(inputOption);
              
 switch (option) {
-                case 0:
+                case 1:
                     addTask();
                     break;
-                case 1:
+                case 2:
                     viewTasks();
                     break;
-                case 2:
+                case 3:
                     JOptionPane.showMessageDialog(null, "Exiting Task Menu...");
                     return;
                 default:
