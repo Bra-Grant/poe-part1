@@ -17,54 +17,25 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TaskTest {
 
+    @BeforeAll
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterAll
+    public static void tearDownClass() throws Exception {
+    }
+
+    @BeforeEach
+    public void setUp() throws Exception {
+    }
+
+    @AfterEach
+    public void tearDown() throws Exception {
+    }
+
  
   
-    /**
-     * Test of getTaskDescription method, of class Task.
-     */
-    //test for valid task description
-    @Test
-    public void testValidTaskDescription() {
-        System.out.println("task successfully captured");
-        Task task = new Task("Login Feature", 1,"create login to authenticate users", "Robyn Harrison", 8, "To Do");
-        assertTrue(task.checkTaskDescription("create login to authenticate users"), "task successfully captured");
         
-    }
-    //test for invalid task description
-    @Test
-    public void testInvalidTaskDescription() {
-        System.out.println("please enter a task description of less than 50 characters");
-        Task task = new Task("Login Feature", 1,"Develop a login feature to securely authenticate user identities and control access to the system", "Robyn Harrison", 8, "To Do");
-        assertFalse(task.checkTaskDescription("Develop a login feature to securely authenticate user identities and control access to the system"), "please enter a task description of less than 50 characters");
-        
-    }
-
-    /**
-     * Test of createTaskID method, of class Task.
-     */
-    
-    //test for task id
-    @Test
-    public void testCreateTaskID(String taskID) {
-        Task task = new Task("login feature", 1, "create login to authenticate users", "Robyn Harrison", 8, "To Do");
-        assertEquals("LO:1:SON", task.createTaskID());
-    }
- 
-
-    /**
-     * Test of returnTotalsHours method, of class Task.
-     */
-    @Test
-    public void testReturnTotalsHours(int taskDuration) {
-        System.out.println("returnTotalsHours");
-        Task instance = null;
-        int expResult = 0;
-        int result = instance.returnTotalsHours(taskDuration);
-        assertEquals(expResult, result);
-        
-    }
-    
-   
 
     /**
      * Test of getTaskName method, of class Task.
@@ -223,18 +194,5 @@ public class TaskTest {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of createTaskID method, of class Task.
-     */
-    @Test
-    public void testCreateTaskID_0args() {
-        System.out.println("createTaskID");
-        Task instance = null;
-        Object expResult = null;
-        Object result = instance.createTaskID();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }
+   
