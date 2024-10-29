@@ -68,17 +68,17 @@ public class Task {
    }
    
    //method to validate task description length
-   public boolean checkTaskDescription(String taskDescription){
-       return taskDescription.length()<= 50;
-       }
+   public boolean checkTaskDescription(String taskDescription) {
+    return taskDescription != null && !taskDescription.isEmpty() && taskDescription.length() <= 50;
+}
    
    //method to create a formatted task ID
-   public String createTaskID(String taskID){
-       if(taskName.length() >= 2 && developerDetails.length() >= 2){
-           return taskName.substring(02).toUpperCase()+ developerDetails.substring(02).toUpperCase();
-       }
-       return taskID;
-   }
+   public String createTaskID(String taskID) {
+    if (taskName.length() >= 2 && developerDetails.length() >= 2) {
+        return taskName.substring(0, 2).toUpperCase() + developerDetails.substring(0, 2).toUpperCase() + ":" + taskNumber;
+    }
+    return "Invalid Task ID"; 
+}
    
    //method to return task duration
    public int returnTotalsHours(int taskDuration){

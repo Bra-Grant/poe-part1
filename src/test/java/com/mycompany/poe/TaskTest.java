@@ -17,182 +17,73 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TaskTest {
 
-    @BeforeAll
-    public static void setUpClass() throws Exception {
+    
+@Test
+    public void checkTaskDescription() {
+        Task task1 = new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
+        Task task2 = new Task("Add Task Feature", 2, "Create Add Task feature to add task users", "Mike Smith", 10, "Doing");
+
+        // Test with a valid description
+        assertTrue(task1.checkTaskDescription("Valid description")); // Expect true
+        assertTrue(task2.checkTaskDescription("Valid description")); // Expect true
+
+        // Test with an empty description
+        assertFalse(task1.checkTaskDescription("")); // Expect false
+        assertFalse(task2.checkTaskDescription("")); // Expect false
+
+        // Test with a description longer than 50 characters
+        String longDescription1 = "This description is definitely more than fifty characters long and should return false.";
+        assertFalse(task1.checkTaskDescription(longDescription1)); // Expect false
+        String longDescription2 = "This description is definitely more than fifty characters long and should return false.";
+        assertFalse(task2.checkTaskDescription(longDescription2)); // Expect false
     }
 
-    @AfterAll
-    public static void tearDownClass() throws Exception {
-    }
-
-    @BeforeEach
-    public void setUp() throws Exception {
-    }
-
-    @AfterEach
-    public void tearDown() throws Exception {
-    }
-
- 
-  
-        
-
-    /**
-     * Test of getTaskName method, of class Task.
-     */
     @Test
-    public void testGetTaskName() {
-        System.out.println("getTaskName");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.getTaskName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+public void createTaskID() {
+    Task task1 = new Task("A", 2, "Valid task description", "Mit", 123, "To Do");
+    String expected1 = "A:MIT";  
+    String actual1 = task1.createTaskID("");
 
-    /**
-     * Test of getTaskNumber method, of class Task.
-     */
-    @Test
-    public void testGetTaskNumber() {
-        System.out.println("getTaskNumber");
-        Task instance = null;
-        int expResult = 0;
-        int result = instance.getTaskNumber();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    Task task2 = new Task("B", 3, "Valid task description", "Cit", 456, "Doing");
+    String expected2 = "B:CIT:3"; 
+    String actual2 = task2.createTaskID("");
 
-    /**
-     * Test of getTaskDescription method, of class Task.
-     */
-    @Test
-    public void testGetTaskDescription() {
-        System.out.println("getTaskDescription");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.getTaskDescription();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getDeveloperDetails method, of class Task.
-     */
-    @Test
-    public void testGetDeveloperDetails() {
-        System.out.println("getDeveloperDetails");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.getDeveloperDetails();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTaskDuration method, of class Task.
-     */
-    @Test
-    public void testGetTaskDuration() {
-        System.out.println("getTaskDuration");
-        Task instance = null;
-        int expResult = 0;
-        int result = instance.getTaskDuration();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTaskID method, of class Task.
-     */
-    @Test
-    public void testGetTaskID() {
-        System.out.println("getTaskID");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.getTaskID();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTaskStatus method, of class Task.
-     */
-    @Test
-    public void testGetTaskStatus() {
-        System.out.println("getTaskStatus");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.getTaskStatus();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTaskDetails method, of class Task.
-     */
-    @Test
-    public void testGetTaskDetails() {
-        System.out.println("getTaskDetails");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.getTaskDetails();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of checkTaskDescription method, of class Task.
-     */
-    @Test
-    public void testCheckTaskDescription() {
-        System.out.println("checkTaskDescription");
-        String taskDescription = "";
-        Task instance = null;
-        boolean expResult = false;
-        boolean result = instance.checkTaskDescription(taskDescription);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of createTaskID method, of class Task.
-     */
-    @Test
-    public void testCreateTaskID_String() {
-        System.out.println("createTaskID");
-        String taskID = "";
-        Task instance = null;
-        String expResult = "";
-        String result = instance.createTaskID(taskID);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of returnTotalsHours method, of class Task.
-     */
-    @Test
-    public void testReturnTotalsHours() {
-        System.out.println("returnTotalsHours");
-        int taskDuration = 0;
-        Task instance = null;
-        int expResult = 0;
-        int result = instance.returnTotalsHours(taskDuration);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+    assertEquals(expected1, actual1);
+    assertEquals(expected2, actual2);
 }
-   
+
+    @Test
+public void printTaskDetails() {
+    Task task1 = new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
+    Task task2 = new Task("Add Task Feature", 2, "Create Add Task feature to add task users", "Michael Smith", 10, "Doing");
+
+    // Capturing output to verify correctness
+    String expectedOutput1 = task1.getTaskDetails(); 
+    String expectedOutput2 = task2.getTaskDetails();
+
+    
+  
+
+    
+}
+
+    @Test
+    public void returnTotalHours() {
+        // Create multiple tasks with varying durations
+        new Task("Task 1", 0, "First Task", "Dev A", 10, "To Do");
+        new Task("Task 2", 1, "Second Task", "Dev B", 12, "Doing");
+        new Task("Task 3", 2, "Third Task", "Dev C", 55, "Done");
+        new Task("Task 4", 3, "Fourth Task", "Dev D", 11, "To Do");
+        new Task("Task 5", 4, "Fifth Task", "Dev E", 1, "Doing");
+
+        int totalHours = Task.returnTotalHours();
+        assertEquals(89, totalHours, "Total hours should be correctly accumulated to 89.");
+
+        // Clear and add additional data to test
+        Task.clearTaskDurations();
+        new Task("Task 1", 0, "Task 1 description", "Dev F", 10, "To Do");
+        new Task("Task 2", 1, "Task 2 description", "Dev G", 12, "Doing");
+
+        totalHours = Task.returnTotalHours();
+        assertEquals(22, totalHours, "Total hours should be correctly accumulated to 22.");
+    }
