@@ -19,14 +19,14 @@ public class Task {
     private String taskStatus;
     
     //constructor to initialize task details
-    public Task(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskID, String taskStatus) {
+    public Task(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskStatus) {
         this.taskName = taskName;
         this.taskNumber = taskNumber;
         this.taskDescription = taskDescription;
         this.developerDetails = developerDetails;
         this.taskDuration = taskDuration;
-        this.taskID = taskID;
         this.taskStatus = taskStatus;
+        
     }
    //getter methods to access attributes
    public String getTaskName(){
@@ -68,12 +68,12 @@ public class Task {
    }
    
    //method to validate task description length
-   public boolean checkTaskDescription(){
+   public boolean checkTaskDescription(String taskDescription){
        return taskDescription.length()<= 50;
        }
    
    //method to create a formatted task ID
-   public String createTaskID(){
+   public String createTaskID(String taskID){
        if(taskName.length() >= 2 && developerDetails.length() >= 2){
            return taskName.substring(02).toUpperCase()+ developerDetails.substring(02).toUpperCase();
        }
@@ -81,7 +81,7 @@ public class Task {
    }
    
    //method to return task duration
-   public int returnTotalsHours(){
+   public int returnTotalsHours(int taskDuration){
        return taskDuration;
    }
    

@@ -106,12 +106,14 @@ for (int i = 0; i < numTasks; i++) {
                 taskDescription = JOptionPane.showInputDialog("Please enter a task description of less than 50 characters:");
             }
             
-String developerName = JOptionPane.showInputDialog("Enter developer name:");
+String developerDetails = JOptionPane.showInputDialog("Enter developer name:");
             String taskDurationStr = JOptionPane.showInputDialog("Enter task duration (in hours):");
             int taskDuration = Integer.parseInt(taskDurationStr);
             
-// Generate Task ID (first two letters of task name and developer name)
-            String taskID = taskName.substring(0, 2).toUpperCase() + developerName.substring(0, 2).toUpperCase();
+// Generate Task ID in the required format
+        String taskID = taskName.substring(0, 2).toUpperCase() + ":" 
+                      + i + ":" 
+                      + developerDetails.substring(developerDetails.length() - 3).toUpperCase();
 
             // Task status options (To Do, Doing, Done)
             String[] statusOptions = {"To Do", "Doing", "Done"};
@@ -121,7 +123,7 @@ String developerName = JOptionPane.showInputDialog("Enter developer name:");
             String taskStatus = statusOptions[statusChoice];
             
 // Create a new task and add it to the list
-            Task newTask = new Task(taskName, i + 1, taskDescription, developerName, taskDuration, taskID, taskStatus);
+            Task newTask = new Task(taskName, i + 1, taskDescription, developerDetails, taskDuration, taskStatus);
             tasks.add(newTask);
 
             JOptionPane.showMessageDialog(null, "Task successfully added!");
