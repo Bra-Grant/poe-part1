@@ -80,7 +80,7 @@ do {
             }
         } while (!checkPassword(password));
 
-return new String[]{username, password,firstname, lastname}; //return user details
+return new String[]{username, password,firstname, lastname}; 
 
 
    
