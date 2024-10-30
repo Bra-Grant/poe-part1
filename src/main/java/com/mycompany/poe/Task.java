@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.poe;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -18,15 +22,27 @@ public class Task {
     private String taskID;
     private String taskStatus;
     
+    //static list to keep track of all task durations to calculate totals hours
+    static List<Integer> allTaskDurations = new ArrayList<>();
+    
     //constructor to initialize task details
     public Task(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskStatus) {
+        
+        // Validate the task description
+        if (!checkTaskDescription(taskDescription)) {
+            JOptionPane.showMessageDialog(null, "Invalid task description. Task creation failed.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // If invalid, do not proceed with task creation
+        }
+        
         this.taskName = taskName;
         this.taskNumber = taskNumber;
         this.taskDescription = taskDescription;
         this.developerDetails = developerDetails;
         this.taskDuration = taskDuration;
         this.taskStatus = taskStatus;
-        
+        this.taskID = createTaskID();
+        allTaskDurations.add(taskDuration);
+    
     }
    //getter methods to access attributes
    public String getTaskName(){
@@ -67,26 +83,47 @@ public class Task {
                "\nStatus: " + taskStatus;
    }
    
-   //method to validate task description length
-   public boolean checkTaskDescription(String taskDescription) {
-    return taskDescription != null && !taskDescription.isEmpty() && taskDescription.length() <= 50;
-}
-   
-   //method to create a formatted task ID
-   public String createTaskID(String taskID) {
-    if (taskName.length() >= 2 && developerDetails.length() >= 2) {
-        return taskName.substring(0, 2).toUpperCase() + developerDetails.substring(0, 2).toUpperCase() + ":" + taskNumber;
+   // Method to validate task description length
+    public boolean checkTaskDescription(String taskDescription) {
+        boolean isValid = taskDescription != null && !taskDescription.isEmpty() && taskDescription.length() <= 50;
+        if (isValid) {
+            JOptionPane.showMessageDialog(null, "Task successfully captured", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter a task description of less than 50 characters", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return isValid;
     }
-    return "Invalid Task ID"; 
-}
-   
-   //method to return task duration
-   public int returnTotalsHours(int taskDuration){
-       return taskDuration;
-   }
 
-  
-    
-    
-    
+    // Method to create and return the TaskID
+    public String createTaskID() {
+        String taskPrefix = taskName.length() >= 2 ? taskName.substring(0, 2).toUpperCase() : taskName.toUpperCase();
+        String developerSuffix = developerDetails.length() >= 3 ? developerDetails.substring(developerDetails.length() - 3).toUpperCase() : developerDetails.toUpperCase();
+        return taskPrefix + ":" + taskNumber + ":" + developerSuffix;
+    }
+
+    /// Method to return the total combined hours of all entered tasks
+    public static int returnTotalHours(List<Integer> taskDurations) {
+        int totalHours = 0;
+        for (int duration : taskDurations) {
+            totalHours += duration;
+        }
+        return totalHours;
+    }
+
+    // Method to clear all task durations
+    public static void clearTaskDurations() {
+        allTaskDurations.clear();
+    }
+
+   // Method to display the total combined hours of all tasks using JOptionPane
+    public static void displayTotalHours(List<Integer> taskDurations) {
+        int totalHours = returnTotalHours(taskDurations);
+        JOptionPane.showMessageDialog(null, "Total hours for all tasks: " + totalHours + " hours", "Total Hours", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+
+    // Method to display the full task details using JOptionPane
+    public void printTaskDetails() {
+        JOptionPane.showMessageDialog(null, getTaskDetails(), "Task Details", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

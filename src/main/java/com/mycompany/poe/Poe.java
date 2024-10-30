@@ -70,8 +70,9 @@ public class Poe {
         while (true) {
              String taskMenu = "Task Menu:\n"
                             + "1. Add Task\n"
-                            + "2. View Tasks\n"
-                            + "3. Exit Task Menu";
+                            + "2. Show Report\n"
+                            + "3. View Tasks\n"
+                            + "4. Exit Task Menu";
              
              String inputOption = JOptionPane.showInputDialog(taskMenu);
             int option = Integer.parseInt(inputOption);
@@ -81,11 +82,14 @@ switch (option) {
                     addTask();
                     break;
                 case 2:
-                    viewTasks();
-                    break;
-                case 3:
-                    JOptionPane.showMessageDialog(null, "Exiting Task Menu...");
+                    JOptionPane.showMessageDialog(null, "Coming Soon");
                     return;
+                case 3:
+                    viewTasks();
+                    return;
+                case 4:
+                    JOptionPane.showMessageDialog(null, "Exiting...");
+                    break;
                 default:
                     JOptionPane.showMessageDialog(null, "Invalid option.");
             }
